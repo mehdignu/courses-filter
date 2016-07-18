@@ -1,0 +1,411 @@
+
+* {
+    box-sizing: border-box;
+    font-family: Lato;
+}
+a {
+    float: right;
+    padding-right: 20px;
+    padding-top: 50px;
+}
+#w img {
+    display: inline-block;
+}
+#w1 img {
+    display: inline-block;
+    height: 258px;
+    margin-left: 482px;
+    margin-top: -38px;
+    position: absolute;
+    width: 300px;
+}
+#w2 img {
+    display: inline-block;
+    height: 258px;
+    margin-left: 664px;
+    margin-top: -38px;
+    position: absolute;
+    width: 300px;
+}
+#desc, h3 {
+    color: white;
+    font-size: 55%;
+    margin-left: 10px;
+    position: relative;
+}
+header, section, footer, aside, nav, article, hgroup {
+    display: block;
+}
+body, button {
+    font-family: "Helvetica Neue",arial,sans-serif;
+}
+.controls {
+    padding: 0% 13% 10% 5%;
+    margin-left: -8px;
+    margin-right: 42px;
+    float: left;
+}
+#filter-list {
+    display: block;
+    margin-bottom: 25px;
+    text-align: center;
+    width: 100%;
+}
+#filter-list li {
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    font-size: 1.2em;
+    padding: 6px 10px;
+    text-shadow: 1px 1px 0 #fff;
+    width: auto;
+}
+#filter-list li:hover {
+    background: #e7e2eb none repeat scroll 0 0;
+}
+#filter-list li.active {
+    background: #d8c5e7 none repeat scroll 0 0;
+    font-weight: bold;
+}
+#choice {
+    float: right;
+}
+label {
+    font-weight: 300;
+    margin: 0 0.4em 0 1em;
+}
+label:first-child {
+    margin-left: 0;
+}
+#title {
+    display: inline-block;
+    font-size: 13px;
+    margin-left: 8px;
+    margin-top: 8px;
+    position: absolute;
+}
+#tr {
+    display: inline-block;
+    font-size: 10px;
+    margin-left: -51px;
+    margin-top: 117px;
+    position: absolute;
+}
+ul {
+    list-style-type: none;
+}
+.cl {
+    display: inline-block;
+    margin-left: 140px;
+    margin-top: 77px;
+    position: absolute;
+}
+#title0 {
+    display: inline-block;
+    font: bold 13px arial;
+    margin-left: -21px;
+    margin-top: -19px;
+    position: absolute;
+}
+#st {
+    display: inline-block;
+    font-size: 11px;
+    margin-left: -18px;
+    margin-top: 23px;
+    position: absolute;
+}
+#subs {
+    display: inline-block;
+    font-size: 11px;
+    margin-left: 9px;
+    margin-top: 39px;
+    position: absolute;
+}
+#cr {
+    display: block;
+    margin-left: -74px;
+    margin-top: 105px;
+    position: absolute;
+    z-index: -1;
+}
+#cr2 {
+    display: inline-block;
+    height: 30px;
+    margin-left: -187px;
+    margin-top: 105px;
+    position: absolute;
+    width: 59px;
+    z-index: -1;
+}
+#cr2 img {
+    height: 153px;
+    width: 231px;
+}
+#cr img {
+    height: 153px;
+    width: 231px;
+}
+button {
+    background: #666 none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 4px;
+    color: #ddd;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0.4em 0.8em;
+}
+button.active {
+    background: #68b8c4 none repeat scroll 0 0;
+}
+button:focus {
+    outline: 0 none;
+}
+button + label {
+    margin-left: 1em;
+}
+.container {
+    bottom: -63px;
+    font-size: 0.1px;
+    left: -1%;
+    padding: 0;
+    position: relative;
+    text-align: justify;
+    width: 100% !important;
+}
+.container::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+.container .mix, .container .gap {
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    width: 100%;
+}
+.container .mix {
+    background: #03899c none repeat scroll 0 0;
+    display: none;
+    margin-bottom: 2px;
+    margin-left: 19px;
+    text-align: left;
+}
+#m1 {
+    font-size: 19px;
+}
+#im1 {
+    display: inline-block;
+    float: right;
+    position: absolute;
+}
+#tx0 {
+    width: 700px;
+}
+#fo {
+    -moz-text-align-last: left;
+    display: inline-block;
+    float: left;
+    list-style-type: square;
+    position: relative;
+    text-align: justify;
+}
+#hr {
+    float: right;
+    margin: 0 0 15px 20px;
+    padding: 15px;
+    text-align: center;
+    width: 220px;
+}
+#hr img {
+    height: 200px;
+    margin-left: -70px;
+    width: 300px;
+}
+#hr p {
+    margin-top: -50px;
+}
+.container .mix.box {
+    display: none;
+    height: 201px;
+    margin-left: 2px;
+    position: relative;
+    text-align: left;
+    width: 231px;
+}
+.container .mix.sc {
+    background: #f59300 none repeat scroll 0 0;
+    display: none;
+    height: 201px;
+    margin-left: 2px;
+    position: relative;
+    text-align: left;
+    width: 231px;
+}
+.container .mix.ee {
+    background: #c4472d none repeat scroll 0 0;
+    display: none;
+    height: 201px;
+    margin-left: 2px;
+    position: relative;
+    text-align: left;
+    width: 231px;
+}
+.container .mix.ec {
+    background: #5e65ad none repeat scroll 0 0;
+    display: none;
+    height: 201px;
+    margin-left: 2px;
+    position: relative;
+    text-align: left;
+    width: 231px;
+}
+.container .mix.gc {
+    background: #439eb5 none repeat scroll 0 0;
+    display: none;
+    height: 201px;
+    margin-left: 2px;
+    position: relative;
+    text-align: left;
+    width: 231px;
+}
+.container .mix.pi {
+    background: #8db135 none repeat scroll 0 0;
+    display: none;
+    height: 201px;
+    margin-left: 2px;
+    position: relative;
+    text-align: left;
+    width: 231px;
+}
+.container .mix.gf {
+    background: #988e20 none repeat scroll 0 0;
+    display: none;
+    height: 201px;
+    margin-left: 2px;
+    position: relative;
+    text-align: left;
+    width: 231px;
+}
+#des {
+    display: block;
+    float: right;
+    position: absolute;
+    right: 60px;
+    top: 220px;
+}
+#des1 {
+    display: block;
+    float: right;
+    position: absolute;
+    right: 60px;
+    top: 470px;
+}
+#fu img {
+    display: block;
+    float: right;
+    height: 250px;
+    margin-left: 0;
+    width: 300px;
+}
+#fu1 img {
+    display: block;
+    float: right;
+    height: 250px;
+    margin-left: 0;
+    margin-right: -300px;
+    margin-top: 250px;
+    width: 300px;
+}
+.imghvr-slide-right {
+    display: inline-block;
+    height: 266px;
+    width: 309px;
+}
+.container .mix::after {
+    color: white;
+    content: attr(data-myorder);
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 4% 6%;
+    vertical-align: top;
+}
+.container .mix::before {
+    content: "";
+    display: inline-block;
+    padding-top: 60%;
+}
+@media all and (min-width: 420px) {
+.container .mix, .container .gap {
+    width: 32%;
+}
+}
+@media all and (min-width: 640px) {
+.container .mix, .container .gap {
+    width: 30.5%;
+}
+}
+.container.list .mix {
+    width: 100%;
+}
+.container.list .mix::before {
+    padding-top: 40px;
+}
+button {
+    background: #666 none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 4px;
+    color: #ddd;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0.4em 0.8em;
+}
+button.active {
+    background: #68b8c4 none repeat scroll 0 0;
+}
+button:focus {
+    outline: 0 none;
+}
+button + label {
+    margin-left: 1em;
+}
+#letit1 h3 {
+    color: white;
+    display: block;
+    margin-left: 3px;
+   /* margin-top: 18px;*/
+    position: absolute;
+    width: 500px;
+    padding-top: -2px;
+}
+#letit2 h4 {
+    color: white;
+    display: block;
+    margin-left: 19px;
+    margin-top: 74px;
+    position: absolute;
+    width: 507px;
+}
+
+#letout h3 {
+    color: white;
+    display: block;
+    margin-left: -31px;
+    position: absolute;
+    width: 500px;
+    top: 88px;
+    font-size: 14px;
+}
+
+#letout a{
+	color: #3A07B2;
+}
+
+#letout a:hover{
+	color: #55A49C;
+}

@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
+    <link rel="stylesheet" href="css/c.css">
+	<link rel="stylesheet" href="css/select.css">
+	<link rel="stylesheet" href="css/r.css">
+<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="http://domain.tld/mobile.css" type="text/css" media="handheld" />
+<link rel="stylesheet" href="http://domain.tld/screen.css" type="text/css" media="Screen" />
+<link rel="stylesheet" href="http://domain.tld/mobile.css" type="text/css" media="handheld" />
+
+	<link rel="stylesheet" href="css/imagehover.css">
+  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="js/select.js"></script>
+
+  <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<header class="controls">
+  <div class='selectBox'>
+ 
+			<span class='selected'></span>
+			<span class='selectArrow'>&#9660</span>
+			<div class="selectOptions" id="SO">
+				<span id="all" class="selectOption" value="all">all</span>	
+				
+			</div>
+		</div>
+  
+  
+	<div class='selectBox'>
+ 
+			<span class='selected'></span>
+			<span class='selectArrow'>&#9660</span>
+			<div class="selectOptions" id="SO1" >
+				<span id="all" class="selectOption" value="all">All Bundles</span>
+								
+
+			</div>
+		</div>
+  
+  
+    
+    <div id="choice">
+
+<div  id="hout">
+			<label>Change Layout:</label>
+			<button id="ChangeLayout" class="btn btn-default">Grid</button>
+			<button id="ChangeLayout1" class="btn btn-default">List</button>
+			<label>ECTS:</label>
+    <button id="b1" class="btn btn-primary" value="myorder:asc">Lowest first</button>
+    <button id="b2" class="btn btn-primary" value="myorder:desc">Highest first</button>
+	
+  </div>
+			 </div>
+</div>
+       
+      
+	 
+	</ul><!-- @end #filter-list -->
+
+ 
+</header>
+
+
+<section id="Container" class="container">
+	
+	
+	
+</section>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times</span>
+      <h3 id="hr1"></h3>
+	  <h3 id="hr2"></h3>
+    </div>
+    <div class="modal-body">
+	<div id="w">
+		<div id="fu"></div>
+		<span id="des"></span>
+		<div id="fu1"></div>
+		<span id="des1"></span>
+		</div>
+		<div id="ff"><p id="bd"></p></div>
+    </div>
+    <div class="modal-footer">
+      <ul id="fo">
+	  </ul>
+    </div>
+  </div>
+
+</div>
+<span id="rr"></span>
+<script type="text/javascript">
+
+
+
+
+$(function(){
+  var $filterSelect = $('#FilterSelect'),
+      $sortSelect = $('#SortSelect'),
+      $container = $('#Container'),
+	  $b1 = $('#b1'),
+	  $b2 = $('#b2');
+  
+  $container.mixItUp();
+  var eh=0;
+  var heh=0;
+   $b1.on('click', function(){
+   if(eh != 1){
+    $container.mixItUp('sort', this.value);
+	eh=eh+1;
+	heh=0;
+	}
+   });
+  
+  $b2.on('click', function(){
+     if(heh != 1){
+
+    $container.mixItUp('sort', this.value);
+	heh=heh+1;
+	eh=0;
+	}
+   });
+});
+
+
+
+function myFunction(arr) {
+$(document).on('click', '.cl', function () {
+
+     var x=this.id ;
+	 var pos;
+	 for(i=0;i<arr[0].topic.length;i++){
+	 		 Object.keys(arr[0].topic[i].childsContent).forEach(function (key2) {
+				if(key2==x)
+				pos=i;
+			 });
+
+}
+		//  document.getElementById("fu").innerHTML = 
+		
+		 Object.keys(arr[0].topic[pos].childsContent[x].images).forEach(function (key2) {
+		if(key2==0){
+		var img = document.createElement('img');
+img.src = arr[0].topic[pos].childsContent[x].images[key2]["image-url"];
+document.getElementById('fu').appendChild(img);
+
+	var node = document.createElement("p");
+	var textnode = document.createTextNode(arr[0].topic[pos].childsContent[x].images[key2]["description"]);
+    node.appendChild(textnode);
+    document.getElementById("des").appendChild(node);
+	
+}
+
+if(key2==1){
+var img = document.createElement('img');
+img.src = arr[0].topic[pos].childsContent[x].images[key2]["image-url"];
+document.getElementById('fu1').appendChild(img);
+
+var node = document.createElement("p");
+	var textnode = document.createTextNode(arr[0].topic[pos].childsContent[x].images[key2]["description"]);
+    node.appendChild(textnode);
+    document.getElementById("des1").appendChild(node);
+	
+}
+		
+		
+});
+
+	  
+		  document.getElementById("bd").innerHTML = arr[0].topic[pos].childsContent[x].content;
+		  
+		  
+		  document.getElementById("hr1").innerHTML = arr[0].topic[pos].childsContent[x].title;
+		  
+		  
+		  document.getElementById("hr2").innerHTML = arr[0].topic[pos].childsContent[x].subTitle;
+		  
+		  
+		  //footer elements
+		 
+		  
+		 
+					var node = document.createElement("LI");
+		textnode = document.createTextNode("ETCS : " +arr[0].topic[pos].childsContent[x].etcs);
+		
+		node.appendChild(textnode);
+		document.getElementById("fo").appendChild(node);
+			var node = document.createElement("LI");
+
+		textnode = document.createTextNode("Prize : "+arr[0].topic[pos].childsContent[x].prize);
+		node.appendChild(textnode);
+		document.getElementById("fo").appendChild(node);
+			var node = document.createElement("LI");
+
+		textnode = document.createTextNode("Duration : "+arr[0].topic[pos].childsContent[x].duration);
+		node.appendChild(textnode);
+		document.getElementById("fo").appendChild(node);
+			var node = document.createElement("LI");
+
+		textnode = document.createTextNode("Start Date: "+arr[0].topic[pos].childsContent[x].startDate);
+		node.appendChild(textnode);
+		document.getElementById("fo").appendChild(node);
+			var node = document.createElement("LI");
+
+		textnode = document.createTextNode(arr[0].topic[pos].childsContent[x].option);
+		node.appendChild(textnode);
+		document.getElementById("fo").appendChild(node);
+
+
+	  var modal = document.getElementById('myModal');
+
+
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+
+
+
+// When the user clicks the button, open the modal 
+
+    modal.style.display = "block";
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+	$("#bd > h3").remove();
+	$("#bd > p").remove();
+	$("#fo > li").remove();
+    $("#fu > img").remove();
+	    $("#fu1 > img").remove();
+
+
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+		$("#bd > h3").remove();
+		$("#bd > p").remove();
+		$("#fo > li").remove();
+    $("#fu > img").remove();
+    $("#fu1 > img").remove();
+	$("#des > p").remove();
+	$("#des1 > p").remove();
+
+    }
+}
+	  
+
+
+
+});
+
+
+$(document).on('click', '#letout', function () {
+
+
+ var x=$(this).attr("data-id");
+	 var pos;
+	 for(i=0;i<arr[0].topic.length;i++){
+	 		 Object.keys(arr[0].topic[i].childsContent).forEach(function (key2) {
+				if(key2==x)
+				pos=i;
+			 });
+
+}
+		//  document.getElementById("fu").innerHTML = 
+		
+		 Object.keys(arr[0].topic[pos].childsContent[x].images).forEach(function (key2) {
+		if(key2==0){
+		var img = document.createElement('img');
+img.src = arr[0].topic[pos].childsContent[x].images[key2]["image-url"];
+document.getElementById('fu').appendChild(img);
+
+	var node = document.createElement("p");
+	var textnode = document.createTextNode(arr[0].topic[pos].childsContent[x].images[key2]["description"]);
+    node.appendChild(textnode);
+    document.getElementById("des").appendChild(node);
+	
+}
+
+if(key2==1){
+var img = document.createElement('img');
+img.src = arr[0].topic[pos].childsContent[x].images[key2]["image-url"];
+document.getElementById('fu1').appendChild(img);
+
+var node = document.createElement("p");
+	var textnode = document.createTextNode(arr[0].topic[pos].childsContent[x].images[key2]["description"]);
+    node.appendChild(textnode);
+    document.getElementById("des1").appendChild(node);
+	
+}
+		
+		
+});
+
+	  
+		  document.getElementById("bd").innerHTML = arr[0].topic[pos].childsContent[x].content;
+		  
+		  
+		  document.getElementById("hr1").innerHTML = arr[0].topic[pos].childsContent[x].title;
+		  
+		  
+		  document.getElementById("hr2").innerHTML = arr[0].topic[pos].childsContent[x].subTitle;
+		  
+		  
+		  //footer elements
+		 
+		  
+		 
+					var node = document.createElement("LI");
+		textnode = document.createTextNode("ETCS : " +arr[0].topic[pos].childsContent[x].etcs);
+		
+		node.appendChild(textnode);
+		document.getElementById("fo").appendChild(node);
+			var node = document.createElement("LI");
+
+		textnode = document.createTextNode("Prize : "+arr[0].topic[pos].childsContent[x].prize);
+		node.appendChild(textnode);
+		document.getElementById("fo").appendChild(node);
+			var node = document.createElement("LI");
+
+		textnode = document.createTextNode("Duration : "+arr[0].topic[pos].childsContent[x].duration);
+		node.appendChild(textnode);
+		document.getElementById("fo").appendChild(node);
+			var node = document.createElement("LI");
+
+		textnode = document.createTextNode("Start Date: "+arr[0].topic[pos].childsContent[x].startDate);
+		node.appendChild(textnode);
+		document.getElementById("fo").appendChild(node);
+			var node = document.createElement("LI");
+
+		textnode = document.createTextNode(arr[0].topic[pos].childsContent[x].option);
+		node.appendChild(textnode);
+		document.getElementById("fo").appendChild(node);
+
+
+	  var modal = document.getElementById('myModal');
+
+
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+
+
+
+// When the user clicks the button, open the modal 
+
+    modal.style.display = "block";
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+	$("#bd > h3").remove();
+	$("#bd > p").remove();
+	$("#fo > li").remove();
+    $("#fu > img").remove();
+	    $("#fu1 > img").remove();
+
+
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+		$("#bd > h3").remove();
+		$("#bd > p").remove();
+		$("#fo > li").remove();
+    $("#fu > img").remove();
+    $("#fu1 > img").remove();
+	$("#des > p").remove();
+	$("#des1 > p").remove();
+
+    }
+}
+
+});
+
+//for the filter select
+var i=0;
+ for(i=0;i<arr[0].topic.length; i++) { 
+var s='<span id="all" class="selectOption" value=".'+arr[0].topic[i].id+'" style="display:visible !important"><div id="s'+i+'">'+arr[0].topic[i].topicTitle+'</div></span>';
+				var div = document.createElement('div');
+				div.setAttribute("style", "display:visible !important;");
+
+				div.innerHTML = s;
+				document.getElementById("SO").appendChild(div);
+				 var col="";
+
+}
+
+//for the bundles
+var i=0;
+for(i=0;i<arr[0].meta.bundles.length; i++) { 
+var s='<span id="all" class="selectOption" value=".'+i+'" style="display:visible"><div>'+arr[0].meta.bundles[i]+'</div></span>';
+
+				var div = document.createElement('div');
+				div.innerHTML = s;
+				document.getElementById("SO1").appendChild(div);
+
+}
+
+
+
+
+
+var j=0;
+ var t="";
+ var st="";
+ var epe="";
+ var sde="";
+ var tbae="";
+ var te="";
+ var ll="";
+ 
+
+  var size = 0;
+  var dd="";
+
+  var max=0;
+  for(i=0;i<arr[0].topic.length; i++) {
+	if (max < arr[0].topic[i].topicChilds.length)
+		max=arr[0].topic[i].topicChilds.length;
+  }
+   var fi=0;
+
+  var i=0;dirabk=0;
+    for(dirabk=0;dirabk<max;dirabk++){ //loop each topixchild
+	
+	for(i=0;i<arr[0].topic.length; i++) { //loop topics
+ 
+ if(arr[0].topic[i].topicChilds[dirabk] != null ){ 
+ var tut = arr[0].topic[i].topicChilds[dirabk]; 
+
+ Object.keys(arr[0].topic[i].childsContent).forEach(function (key) { //loop every childcontent in topics
+ if(tut==key){
+  var t="box";
+  if(arr[0].topic[i].topicColor=="F59300"){
+  t="sc";}
+  if(arr[0].topic[i].topicColor=="C4472D"){
+  t="ee";}
+  if(arr[0].topic[i].topicColor=="5E65AD"){
+  t="ec";}
+  if(arr[0].topic[i].topicColor=="439EB5"){
+  t="gc";}
+  if(arr[0].topic[i].topicColor=="8DB135"){
+  t="pi";}
+  if(arr[0].topic[i].topicColor=="988E20"){
+  t="gf";}
+  
+    var fu = arr[0].topic[i].childsContent[key].etcs;
+  fu = fu.slice(0,2);
+
+ if(arr[0].topic[i].childsContent[key].bundle.length  != 0){
+for(bund=0;bund<arr[0].topic[i].childsContent[key].bundle.length;bund++){
+var s = '<div class="mix '+t+' '+arr[0].topic[i].id+' '+arr[0].topic[i].childsContent[key].bundle[bund]+' '+key+'" data-myorder="'+fu+'" data-myorder1="'+j+'" > <figure class="imghvr-slide-right" class="here" id="col'+j+'"> <div id="title"><span id="ti0'+j+'"></span></div> <div id="subs"><span id="su0'+j+'"></span></div> <figcaption> <div id="title0"><span id="ti1'+j+'"></span></div> <div id="st"><span id="su1'+j+'"></span></div> <span><h6 class="cl" id="'+key+'"></h6></span> <ul id="tr"> <li id="sd'+j+'"> </li> <li id="ep'+j+'"></li> <li id="tba'+j+'"></li> </ul> </figcaption> <div id="cr2"> <div id="im0'+j+j+'"></div><br> </div><div id="cr"> <div id="im0'+j+'"></div></div></figure> <span id="letout" data-id="'+key+'"><h3><div id="letou'+j+j+'"></div></h3> </span>  <span id="letit1"><h3><div id="leti'+j+j+'"></div></h3> </span> <span id="letit2"><h4><div id="leti'+j+'"></div></h4></span><div id="w"> <span id="w2"> <div id="i0'+j+j+'"> </div></span> <span id="w1"> <div id="i0'+j+'"></div></span> </div> </div>'; // HTML string
+}
+}else{
+var s = '<div class="mix '+t+' '+arr[0].topic[i].id+' '+key+'" data-myorder="'+fu+'" data-myorder1="'+j+'" > <figure class="imghvr-slide-right" class="here" id="col'+j+'"> <div id="title"><span id="ti0'+j+'"></span></div> <div id="subs"><span id="su0'+j+'"></span></div> <figcaption> <div id="title0"><span id="ti1'+j+'"></span></div> <div id="st"><span id="su1'+j+'"></span></div> <span><h6 class="cl" id="'+key+'"></h6><span> <ul id="tr"> <li id="sd'+j+'"> </li> <li id="ep'+j+'"></li> <li id="tba'+j+'"></li> </ul> </figcaption> <div id="cr2"> <div id="im0'+j+j+'"></div><br> </div> <div id="cr"> <div id="im0'+j+'"></div></div> </figure><span id="letout" data-id="'+key+'"><h3><div id="letou'+j+j+'"></div></h3> </span> <span id="letit1"><h3><div id="leti'+j+j+'"></div></h3></span> <span id="letit2"><h4><div id="leti'+j+'"></div></h4></span> <div id="w"> <span id="w2"> <div id="i0'+j+j+'"> </div></span> <span id="w1"> <div id="i0'+j+'"></div></span> </div> </div>'; // HTML string
+
+
+}
+
+
+var div = document.createElement('div');
+div.innerHTML = s;
+document.getElementById("Container").appendChild(div);
+//set color
+ var col="";
+col += "#"+arr[0].topic[i].topicColor;
+ var x="#col"+j;
+col+= " none repeat scroll 0 0";
+ 	$(x).css('background', col);
+$(x).removeClass("here").addClass("sc");
+	
+	
+ t="";
+ st="";
+ te="";
+ 
+ sde="";
+ epe="";
+ tbae="";
+ ll="";
+
+ var se="s"+j;
+ var l=key;
+ var f="ti0"+j;
+ var s="su0"+j;
+ 
+ var ti="ti1"+j;
+ var su="su1"+j;
+ 
+ var sd = "sd"+j;
+ var ep = "ep"+j;
+ var tba = "tba"+j;
+	
+	
+	
+
+	
+	
+ t="";
+ st="";
+ te="";
+ 
+ sde="";
+ epe="";
+ tbae="";
+ ll="";
+
+ var se="s"+j;
+ var l=key;
+ var f="ti0"+j;
+ var s="su0"+j;
+ var le="letou"+j+j;
+ var ti="ti1"+j;
+ var su="su1"+j;
+ var leti1 ="leti"+j+j;
+ var leti2="leti"+j;
+ var sd = "sd"+j;
+ var ep = "ep"+j;
+ var tba = "tba"+j;
+ 
+ Object.keys(arr[0].topic[i].childsContent[key].images).forEach(function (key2) { 
+ if(key2==0){
+// alert("key2: "+key2+" i:"+i);
+
+ var e="i0"+fi+fi;
+	 var im="im0"+fi+fi;
+	 	document.getElementById(e).innerHTML = '<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>';
+//alert('<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>' +"   " +e+" "+j);
+	document.getElementById(im).innerHTML = '<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>';
+
+	}
+	if(key2==1){
+	// alert("key2: "+key2+" i:"+i);
+//alert('<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>' +"   " +e+" "+j);
+
+var e8="i0"+fi;
+	var im2="im0"+fi;
+		document.getElementById(im2).innerHTML = '<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>';
+		document.getElementById(e8).innerHTML = '<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>';
+
+		}
+
+
+	 
+	 });
+	 
+ $("#w img").hide();
+ $("#letit1 h3").hide();
+		  $("#letit2 h4").hide();
+		  $("#letout h3").hide();
+
+ document.getElementById(sd).innerHTML = "ETCS: "+ arr[0].topic[i].childsContent[key].etcs;
+	document.getElementById(ep).innerHTML = "Prize: "+ arr[0].topic[i].childsContent[key].prize;
+	document.getElementById(tba).innerHTML = "duration: "+ arr[0].topic[i].childsContent[key].duration;
+ 	document.getElementById(l).innerHTML ='<a href="#">' + "read more" + '</a>';
+	 	document.getElementById(le).innerHTML ='<a href="#">' + "read more" + '</a>';
+
+	document.getElementById(f).innerHTML = arr[0].topic[i].childsContent[key].title;
+	document.getElementById(s).innerHTML = arr[0].topic[i].childsContent[key].subTitle;
+	document.getElementById(su).innerHTML = arr[0].topic[i].childsContent[key].teaser;
+	document.getElementById(ti).innerHTML = arr[0].topic[i].childsContent[key].title;
+	
+	document.getElementById(leti1).innerHTML = arr[0].topic[i].childsContent[key].title;
+	document.getElementById(leti2).innerHTML = arr[0].topic[i].childsContent[key].subTitle;
+	//document.getElementById(se).innerHTML = arr[0].topic[j].topicTitle;
+	
+	j++;
+    				fi++;
+
+ }
+//end  child content loop
+});//end topic loop
+
+ }
+
+ 
+ 
+ }
+
+ }
+ 
+
+ 
+ 
+
+
+ }
+
+
+
+
+
+
+
+
+
+  
+
+$(function(){
+
+  var layout = 'grid', // Store the current layout as a variable
+      $container = $('#Container'), // Cache the MixItUp container
+	  $changeLayout1 = $("#ChangeLayout1"),
+      $changeLayout = $('#ChangeLayout'); // Cache the changeLayout button
+  
+  // Instantiate MixItUp with some custom options:
+  
+  $container.mixItUp({
+    animation: {
+      animateChangeLayout: true, // Animate the positions of targets as the layout changes
+      animateResizeTargets: true, // Animate the width/height of targets as the layout changes
+      effects: 'fade rotateX(-40deg) translateZ(-100px)'
+    },
+    layout: {
+      containerClass: 'grid' // Add the class 'list' to the container on load
+    }
+  });
+  
+
+ $changeLayout1.on('click', function(){
+if(layout == 'grid'){
+layout = 'list';
+	      $("figcaption").hide();
+		  $("#w img").show();
+		$("#title span").hide();
+		  $("#subs span").hide();
+		  $("#cr img").hide();
+		  $("#cr2 img").hide();
+		 $("#letit1 h3").show();
+		  $("#letit2 h4").show();
+		  		  $("#letout h3").show();
+
+      // Update the button text
+      $container.mixItUp('changeLayout', {
+        containerClass: layout // Change the container class to 'list'
+      });
+    }
+ });
+  // MixItUp does not provide a default "change layout" button, so we need to make our own and bind it with a click handler:
+  
+  $changeLayout.on('click', function(){
+
+    // If the current layout is a list, change to grid:
+    
+    if(layout == 'list'){
+      layout = 'grid';
+$("figcaption").show();
+$("#w img").hide();
+$("#title span").show();
+		  $("#subs span").show();
+$("#letit1 h3").hide();
+		  $("#letit2 h4").hide();
+		  		  $("#letout h3").hide();
+
+		  $("#cr img").show();
+		  $("#cr2 img").show();
+
+      $changeLayout.text('Grid'); // Update the button text
+      $container.mixItUp('changeLayout', {
+        containerClass: layout // change the container class to "grid"
+      });
+      
+    // Else if the current layout is a grid, change to list:  
+    
+    } 
+  });
+  
+});
+
+
+
+
+    
+</script>
+<script src="js/small.js"></script>
+
+</body>
+</html>
