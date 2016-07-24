@@ -553,22 +553,23 @@ $(x).removeClass("here").addClass("sc");
  
  Object.keys(arr[0].topic[i].childsContent[key].images).forEach(function (key2) { 
  if(key2==0){
-// alert("key2: "+key2+" i:"+i);
 
  var e="i0"+fi+fi;
-	 var im="im0"+fi+fi;
+	 var im="#im0"+fi+fi;
 	 	document.getElementById(e).innerHTML = '<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>';
-//alert('<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>' +"   " +e+" "+j);
-	document.getElementById(im).innerHTML = '<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>';
+		
+ 		$(im).css({"background-image": "url("+arr[0].topic[i].childsContent[key].images[key2]["image-url"]+")","background-size": "cover","background-position": "center center","height":"100px","width":"115px"});
+
 
 	}
 	if(key2==1){
-	// alert("key2: "+key2+" i:"+i);
-//alert('<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>' +"   " +e+" "+j);
 
 var e8="i0"+fi;
-	var im2="im0"+fi;
-		document.getElementById(im2).innerHTML = '<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>';
+	var im2="#im0"+fi;
+	$(im2).css({"background-image": "url("+arr[0].topic[i].childsContent[key].images[key2]["image-url"]+")","background-size": "cover","background-position": "center center","height":"100px","width":"115px"});
+	
+ 	
+
 		document.getElementById(e8).innerHTML = '<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>';
 
 		}
@@ -657,8 +658,8 @@ layout = 'list';
 		  $("#w img").show();
 		$("#title span").hide();
 		  $("#subs span").hide();
-		  $("#cr img").hide();
-		  $("#cr2 img").hide();
+		  $("#cr div").hide();
+		  $("#cr2 div").hide();
 		 $("#letit1 h3").show();
 		  $("#letit2 h4").show();
 		  		  $("#letout h3").show();
@@ -685,8 +686,8 @@ $("#letit1 h3").hide();
 		  $("#letit2 h4").hide();
 		  		  $("#letout h3").hide();
 
-		  $("#cr img").show();
-		  $("#cr2 img").show();
+		  $("#cr div").show();
+		  $("#cr2 div").show();
 
       $changeLayout.text('Grid'); // Update the button text
       $container.mixItUp('changeLayout', {

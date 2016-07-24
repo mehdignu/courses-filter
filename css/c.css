@@ -122,22 +122,7 @@ ul {
     margin-top: 39px;
     position: absolute;
 }
-#cr {
-    display: block;
-    margin-left: -74px;
-    margin-top: 105px;
-    position: absolute;
-    z-index: -1;
-}
-#cr2 {
-    display: inline-block;
-    height: 30px;
-    margin-left: -187px;
-    margin-top: 105px;
-    position: absolute;
-    width: 59px;
-    z-index: -1;
-}
+
 #cr2 img {
     height: 153px;
     width: 231px;
@@ -408,4 +393,21 @@ button + label {
 
 #letout a:hover{
 	color: #55A49C;
+}
+
+#cr {
+    display: block;
+    margin-left: 116px;
+    margin-top: 100px;
+    position: absolute;
+    z-index: -1;
+}
+#cr2 {
+    display: inline-block;
+    height: 30px;
+    margin-left: 1px;
+    margin-top: 100px;
+    position: absolute;
+    width: 59px;
+    z-index: -1;
 }
