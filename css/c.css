@@ -98,9 +98,10 @@ ul {
 }
 .cl {
     display: inline-block;
-    margin-left: 140px;
-    margin-top: 77px;
+    margin-left: 101px;
+    margin-top: 79px;
     position: absolute;
+    width: 100px;
 }
 #title0 {
     display: inline-block;
@@ -384,7 +385,7 @@ button + label {
     width: 500px;
 }
 #letout a {
-    color: #3a07b2;
+    color: white;
 }
 #letout a:hover {
     color: #55a49c;
