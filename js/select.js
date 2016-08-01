@@ -19,7 +19,22 @@
                         $(this).parent().children('div.selectOptions').css('display','none');
                     }
                 });
+				
+				
+				 $(this).children('span.selected1').html($(this).children('div.selectOptions1').children('span.selectOption1:first').html());
+                $(this).attr('value',$(this).children('div.selectOptions1').children('span.selectOption1:first').attr('value'));
 
+                $(this).children('span.selected1,span.selectArrow').click(function(){
+                    if($(this).parent().children('div.selectOptions1').css('display') == 'none'){
+                        $(this).parent().children('div.selectOptions1').css('display','block');
+                    }
+                    else
+                    {
+                        $(this).parent().children('div.selectOptions1').css('display','none');
+                    }
+                });
+			
+				//topics
                 $(this).find('span.selectOption').click(function(){
                     $(this).parent().css('display','block');
 					$(this).closest('div.selectBox').attr('value',$(this).attr('value'));
@@ -27,8 +42,42 @@
 					$b=$(this).closest('div.selectBox').attr('value');
 					$container.mixItUp('filter',$b);
 					
+					
+					$c=$(this).closest('span.selectOption').attr('type');
+					
+					
+					//hiding after click
+					$(".selectOptions").hide();
+					
+					//change text
+					$("span.selected").text($c);
+
                     $(this).parent().siblings('span.selected').html($(this).html());
 				});
+				
+				
+				//bundles
+				$(this).find('span.selectOption1').click(function(){
+                    $(this).parent().css('display','block');
+					$(this).closest('div.selectBox').attr('value',$(this).attr('value'));
+					$(this).parent().siblings('span.selected1').html($(this).html()).text();
+					$b=$(this).closest('div.selectBox').attr('value');
+					$container.mixItUp('filter',$b);
+					
+					
+					$c=$(this).closest('span.selectOption1').attr('type');
+					
+					
+					//hiding after click
+					$(".selectOptions1").hide();
+					
+					//change text
+					$("span.selected1").text($c);
+
+                    $(this).parent().siblings('span.selected1').html($(this).html());
+				});
+				
+				
             });             
         }
 
@@ -40,5 +89,7 @@ $(document).mouseup(function (e)
         && container.has(e.target).length === 0) 
     {
         $(".selectOptions").hide();
+		        $(".selectOptions1").hide();
+
     }
 });

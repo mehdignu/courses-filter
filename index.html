@@ -32,6 +32,7 @@
 <body>
 
 <header class="controls">
+
   <div class='selectBox'>
  
 			<span class='selected'></span>
@@ -45,10 +46,10 @@
   
 	<div class='selectBox'>
  
-			<span class='selected'></span>
+			<span class='selected1'></span>
 			<span class='selectArrow'>&#9660</span>
-			<div class="selectOptions" id="SO1" >
-				<span id="all" class="selectOption" value="all">All Bundles</span>
+			<div class="selectOptions1" id="SO1" >
+				<span id="all" class="selectOption1" value="all">All Bundles</span>
 								
 
 			</div>
@@ -253,6 +254,7 @@ span.onclick = function() {
 	$("#fo > li").remove();
     $("#fu > img").remove();
 	    $("#fu1 > img").remove();
+	    $("#des > p").remove();
 
 
 }
@@ -341,7 +343,7 @@ var node = document.createElement("p");
 		document.getElementById("fo").appendChild(node);
 			var node = document.createElement("LI");
 
-		textnode = document.createTextNode("Prize : "+arr[0].topic[pos].childsContent[x].prize);
+		textnode = document.createTextNode("Price : "+arr[0].topic[pos].childsContent[x].prize);
 		node.appendChild(textnode);
 		document.getElementById("fo").appendChild(node);
 			var node = document.createElement("LI");
@@ -408,7 +410,7 @@ window.onclick = function(event) {
 //for the filter select
 var i=0;
  for(i=0;i<arr[0].topic.length; i++) { 
-var s='<span id="all" class="selectOption" value=".'+arr[0].topic[i].id+'" style="display:visible !important"><div id="s'+i+'">'+arr[0].topic[i].topicTitle+'</div></span>';
+var s='<span id="all" class="selectOption" value=".'+arr[0].topic[i].id+'" style="display:visible !important" type="'+arr[0].topic[i].topicTitle+'"><div id="s'+i+'">'+arr[0].topic[i].topicTitle+'</div></span>';
 				var div = document.createElement('div');
 				div.setAttribute("style", "display:visible !important;");
 
@@ -421,7 +423,7 @@ var s='<span id="all" class="selectOption" value=".'+arr[0].topic[i].id+'" style
 //for the bundles
 var i=0;
 for(i=0;i<arr[0].meta.bundles.length; i++) { 
-var s='<span id="all" class="selectOption" value=".'+i+'" style="display:visible"><div>'+arr[0].meta.bundles[i]+'</div></span>';
+var s='<span id="all" class="selectOption1" value=".'+i+'" style="display:visible" type="'+arr[0].meta.bundles[i]+'"><div>'+arr[0].meta.bundles[i]+'</div></span>';
 
 				var div = document.createElement('div');
 				div.innerHTML = s;
@@ -584,8 +586,8 @@ var e8="i0"+fi;
 		  $("#letout h3").hide();
 
  document.getElementById(sd).innerHTML = "ETCS: "+ arr[0].topic[i].childsContent[key].etcs;
-	document.getElementById(ep).innerHTML = "Prize: "+ arr[0].topic[i].childsContent[key].prize;
-	document.getElementById(tba).innerHTML = "duration: "+ arr[0].topic[i].childsContent[key].duration;
+	document.getElementById(ep).innerHTML = "Price: "+ arr[0].topic[i].childsContent[key].prize;
+	document.getElementById(tba).innerHTML = "Duration: "+ arr[0].topic[i].childsContent[key].duration;
  	document.getElementById(l).innerHTML ='<a href="#">' + "&#xbb;read more" + '</a>';
 	 	document.getElementById(le).innerHTML ='<a href="#">' + "&#xbb;read more" + '</a>';
 

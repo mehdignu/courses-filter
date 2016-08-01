@@ -25,6 +25,23 @@ span.selected {
     text-indent: 20px;
     width: 347px;
 }
+
+span.selected1 {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: #f6f6f6 none repeat scroll 0 0;
+    border-bottom-left-radius: 5px;
+    border-color: #ccc -moz-use-text-color #ccc #ccc;
+    border-image: none;
+    border-style: solid none solid solid;
+    border-top-left-radius: 5px;
+    border-width: 1px medium 1px 1px;
+    overflow: hidden;
+    text-indent: 20px;
+    width: 347px;
+}
 span.selectArrow {
     -moz-user-select: none;
     background: #f7eff3 none repeat scroll 0 0;
@@ -35,7 +52,7 @@ span.selectArrow {
     text-align: center;
     width: 30px;
 }
-span.selectArrow, span.selected {
+span.selectArrow, span.selected, span.selected1 {
     float: left;
     height: 30px;
     position: relative;
@@ -55,7 +72,28 @@ div.selectOptions {
     width: 347px;
 	z-index: 50;
 }
+div.selectOptions1 {
+    background: #f6f6f6 none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: none;
+    left: 0;
+    overflow: hidden;
+    padding-top: 2px;
+    position: absolute;
+    top: 28px;
+    width: 347px;
+	z-index: 50;
+}
 span.selectOption {
+    display: block;
+    line-height: 20px;
+    padding: 5px 8px;
+    width: 105%;
+}
+
+span.selectOption1 {
     display: block;
     line-height: 20px;
     padding: 5px 8px;

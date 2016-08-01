@@ -103,6 +103,10 @@ ul {
     position: absolute;
     width: 100px;
 }
+
+.cl a{
+	color:white;
+}
 #title0 {
     display: inline-block;
     font: bold 13px arial;

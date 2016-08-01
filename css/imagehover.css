@@ -22,6 +22,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+
 }
 [class^='imghvr-'] > img,
 [class*=' imghvr-'] > img {
@@ -79,8 +80,8 @@
 	
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
+  -webkit-transition: all 0.63s ease;
+  transition: all 0.63s ease;
 }
 /* imghvr-fade-*
    ----------------------------- */
