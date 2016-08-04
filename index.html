@@ -148,8 +148,9 @@ $(function(){
 
 
 
-function myFunction(arr) {
+function myFunction(arr){
 $(document).on('click', '.cl', function () {
+
 
      var x=this.id ;
 	 var pos;
@@ -282,7 +283,6 @@ window.onclick = function(event) {
 
 $(document).on('click', '#letout', function () {
 
-
  var x=$(this).attr("data-id");
 	 var pos;
 	 for(i=0;i<arr[0].topic.length;i++){
@@ -386,6 +386,7 @@ span.onclick = function() {
 	$("#fo > li").remove();
     $("#fu > img").remove();
 	    $("#fu1 > img").remove();
+	$("#des1 > p").remove();
 
 
 }
@@ -556,23 +557,27 @@ $(x).removeClass("here").addClass("sc");
  Object.keys(arr[0].topic[i].childsContent[key].images).forEach(function (key2) { 
  if(key2==0){
 
- var e="i0"+fi+fi;
+ var e="#i0"+fi+fi;
 	 var im="#im0"+fi+fi;
-	 	document.getElementById(e).innerHTML = '<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>';
-		
+	 	//document.getElementById(e).innerHTML = '<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>';
+
+		 		$(e).css({"background-image": "url("+arr[0].topic[i].childsContent[key].images[key2]["image-url"] +")","background-size": "cover","background-position": "center center","height":"202px","width":"181px"});
+
  		$(im).css({"background-image": "url("+arr[0].topic[i].childsContent[key].images[key2]["image-url"]+")","background-size": "cover","background-position": "center center","height":"100px","width":"115px"});
 
 
 	}
 	if(key2==1){
 
-var e8="i0"+fi;
+var e8="#i0"+fi;
 	var im2="#im0"+fi;
 	$(im2).css({"background-image": "url("+arr[0].topic[i].childsContent[key].images[key2]["image-url"]+")","background-size": "cover","background-position": "center center","height":"100px","width":"115px"});
 	
+		$(e8).css({"background-image": "url("+arr[0].topic[i].childsContent[key].images[key2]["image-url"]+")","background-size": "cover","background-position": "center center","height":"202px","width":"181px"});
+
  	
 
-		document.getElementById(e8).innerHTML = '<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>';
+		//document.getElementById(e8).innerHTML = '<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>';
 
 		}
 
@@ -622,6 +627,9 @@ var e8="i0"+fi;
 
  }
 
+ 
+ 
+ 
 
 
 
@@ -708,7 +716,7 @@ $("#letit1 h3").hide();
 
     
 </script>
-<script src="js/small.js"></script>
+<script type="text/javascript" id="myScript" src="https://www2.oei.fu-berlin.de/global-politics/cgp_units_v2/module-navigator.js"></script>
 
 </body>
 </html>

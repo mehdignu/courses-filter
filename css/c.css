@@ -11,20 +11,20 @@ a {
 #w img {
     display: inline-block;
 }
-#w1 img {
+#w1 {
     display: inline-block;
     height: 258px;
-    margin-left: 482px;
-    margin-top: -38px;
-    position: absolute;
+    margin-left: 571px;
+    margin-top: -258px;
+    position: relative;
     width: 300px;
 }
-#w2 img {
+#w2 {
     display: inline-block;
     height: 258px;
-    margin-left: 664px;
-    margin-top: -38px;
-    position: absolute;
+    margin-left: 753px;
+    margin-top: -39px;
+    position: relative;
     width: 300px;
 }
 #desc, h3 {
@@ -81,10 +81,10 @@ label:first-child {
 #title {
     display: inline-block;
     font-size: 13px;
+    font-weight: bold;
     margin-left: 8px;
     margin-top: 8px;
     position: absolute;
-    font-weight: bold;
 }
 #tr {
     display: inline-block;
@@ -103,9 +103,8 @@ ul {
     position: absolute;
     width: 100px;
 }
-
-.cl a{
-	color:white;
+.cl a {
+    color: white;
 }
 #title0 {
     display: inline-block;
@@ -369,13 +368,14 @@ button + label {
     display: block;
     margin-left: 3px;
     position: absolute;
+    top: 39px;
     width: 500px;
 }
 #letit2 h4 {
     color: white;
     display: block;
     margin-left: 19px;
-    margin-top: 74px;
+    margin-top: 60px;
     position: absolute;
     width: 507px;
 }
