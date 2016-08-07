@@ -12,6 +12,7 @@
 
                 $(this).children('span.selected,span.selectArrow').click(function(){
                     if($(this).parent().children('div.selectOptions').css('display') == 'none'){
+						        $(".selectOptions1").hide();
                         $(this).parent().children('div.selectOptions').css('display','block');
                     }
                     else
@@ -26,6 +27,7 @@
 
                 $(this).children('span.selected1,span.selectArrow').click(function(){
                     if($(this).parent().children('div.selectOptions1').css('display') == 'none'){
+						        $(".selectOptions").hide();
                         $(this).parent().children('div.selectOptions1').css('display','block');
                     }
                     else

@@ -38,7 +38,7 @@
 			<span class='selected'></span>
 			<span class='selectArrow'>&#9660</span>
 			<div class="selectOptions" id="SO">
-				<span id="all" class="selectOption" value="all">all</span>	
+				<span id="all" class="selectOption" value="all">Select a Catagory</span>	
 				
 			</div>
 		</div>
@@ -49,7 +49,7 @@
 			<span class='selected1'></span>
 			<span class='selectArrow'>&#9660</span>
 			<div class="selectOptions1" id="SO1" >
-				<span id="all" class="selectOption1" value="all">All Bundles</span>
+				<span id="all" class="selectOption1" value="all">Choose Module Bundle</span>
 								
 
 			</div>
@@ -63,9 +63,9 @@
 			<label>Change Layout:</label>
 			<button id="ChangeLayout" class="btn btn-default">Grid</button>
 			<button id="ChangeLayout1" class="btn btn-default">List</button>
-			<label>ECTS:</label>
-    <button id="b1" class="btn btn-primary" value="myorder:asc">Lowest first</button>
-    <button id="b2" class="btn btn-primary" value="myorder:desc">Highest first</button>
+			<label>Topics change view as:</label>
+    <button id="b1" class="btn btn-primary" value="myorder:asc">Wall</button>
+    <button id="b2" class="btn btn-primary" value="myorder1:asc">Flower</button>
 	
   </div>
 			 </div>
@@ -108,6 +108,7 @@
     <div class="modal-footer">
       <ul id="fo">
 	  </ul>
+	  <a href="http://www.global-politics.org/certificates-for-professionals/Registration/index.html" target="_top" id="rn">&#xbb;Register Now</a>
     </div>
   </div>
 
@@ -153,6 +154,11 @@ $(document).on('click', '.cl', function () {
 
 
      var x=this.id ;
+	 
+	     var tip = $("#"+x).offset().top;
+		 tip = tip-300;
+	$(".modal").css("padding-top", +tip+"px");
+	
 	 var pos;
 	 for(i=0;i<arr[0].topic.length;i++){
 	 		 Object.keys(arr[0].topic[i].childsContent).forEach(function (key2) {
@@ -161,13 +167,16 @@ $(document).on('click', '.cl', function () {
 			 });
 
 }
-		//  document.getElementById("fu").innerHTML = 
 		
 		 Object.keys(arr[0].topic[pos].childsContent[x].images).forEach(function (key2) {
 		if(key2==0){
+		
 		var img = document.createElement('img');
 img.src = arr[0].topic[pos].childsContent[x].images[key2]["image-url"];
 document.getElementById('fu').appendChild(img);
+
+		//$("#fu").css({"background-image": "url("+arr[0].topic[pos].childsContent[x].images[key2]["image-url"]+")","background-size": "cover","background-position": "center center","height":"197px","width":"201px"});
+
 
 	var node = document.createElement("p");
 	var textnode = document.createTextNode(arr[0].topic[pos].childsContent[x].images[key2]["description"]);
@@ -177,9 +186,13 @@ document.getElementById('fu').appendChild(img);
 }
 
 if(key2==1){
+
 var img = document.createElement('img');
 img.src = arr[0].topic[pos].childsContent[x].images[key2]["image-url"];
 document.getElementById('fu1').appendChild(img);
+
+
+		//$("#fu1").css({"background-image": "url("+arr[0].topic[pos].childsContent[x].images[key2]["image-url"]+")","background-size": "cover","background-position": "center center","height":"197px","width":"201px"});
 
 var node = document.createElement("p");
 	var textnode = document.createTextNode(arr[0].topic[pos].childsContent[x].images[key2]["description"]);
@@ -284,6 +297,16 @@ window.onclick = function(event) {
 $(document).on('click', '#letout', function () {
 
  var x=$(this).attr("data-id");
+ 
+ 
+ //new crap
+    var tip = $(this).offset().top;
+		 tip = tip-200;
+	$(".modal").css("padding-top", +tip+"px");
+
+ 
+ 
+ //end new crap
 	 var pos;
 	 for(i=0;i<arr[0].topic.length;i++){
 	 		 Object.keys(arr[0].topic[i].childsContent).forEach(function (key2) {
@@ -457,38 +480,46 @@ var j=0;
    var fi=0;
 
   var i=0;dirabk=0;
-    for(dirabk=0;dirabk<max;dirabk++){ //loop each topixchild
+    for(dirabk=0;dirabk<max;dirabk++){ 
 	
-	for(i=0;i<arr[0].topic.length; i++) { //loop topics
+	for(i=0;i<arr[0].topic.length; i++) { 
  
  if(arr[0].topic[i].topicChilds[dirabk] != null ){ 
  var tut = arr[0].topic[i].topicChilds[dirabk]; 
 
- Object.keys(arr[0].topic[i].childsContent).forEach(function (key) { //loop every childcontent in topics
+ Object.keys(arr[0].topic[i].childsContent).forEach(function (key) { 
  if(tut==key){
   var t="box";
+  var pw;
   if(arr[0].topic[i].topicColor=="F59300"){
-  t="sc";}
+  t="sc";
+  pw=1;
+  }
   if(arr[0].topic[i].topicColor=="C4472D"){
-  t="ee";}
+  t="ee";
+  pw=2;}
   if(arr[0].topic[i].topicColor=="5E65AD"){
-  t="ec";}
+  t="ec";
+  pw=3;}
   if(arr[0].topic[i].topicColor=="439EB5"){
-  t="gc";}
+  t="gc";
+  pw=4;}
   if(arr[0].topic[i].topicColor=="8DB135"){
-  t="pi";}
+  t="pi";
+  pw=5;}
   if(arr[0].topic[i].topicColor=="988E20"){
-  t="gf";}
+  t="gf";
+  pw=6;}
   
     var fu = arr[0].topic[i].childsContent[key].etcs;
   fu = fu.slice(0,2);
 
  if(arr[0].topic[i].childsContent[key].bundle.length  != 0){
 for(bund=0;bund<arr[0].topic[i].childsContent[key].bundle.length;bund++){
-var s = '<div class="mix '+t+' '+arr[0].topic[i].id+' '+arr[0].topic[i].childsContent[key].bundle[bund]+' '+key+'" data-myorder="'+fu+'" data-myorder1="'+j+'" > <figure class="imghvr-slide-right" class="here" id="col'+j+'"> <div id="title"><span id="ti0'+j+'"></span></div> <div id="subs"><span id="su0'+j+'"></span></div> <figcaption> <div id="title0"><span id="ti1'+j+'"></span></div> <div id="st"><span id="su1'+j+'"></span></div> <span><h6 class="cl" id="'+key+'"></h6></span> <ul id="tr"> <li id="sd'+j+'"> </li> <li id="ep'+j+'"></li> <li id="tba'+j+'"></li> </ul> </figcaption> <div id="cr2"> <div id="im0'+j+j+'"></div><br> </div><div id="cr"> <div id="im0'+j+'"></div></div></figure> <span id="letout" data-id="'+key+'"><h3><div id="letou'+j+j+'"></div></h3> </span>  <span id="letit1"><h3><div id="leti'+j+j+'"></div></h3> </span> <span id="letit2"><h4><div id="leti'+j+'"></div></h4></span><div id="w"> <span id="w2"> <div id="i0'+j+j+'"> </div></span> <span id="w1"> <div id="i0'+j+'"></div></span> </div> </div>'; // HTML string
+var s = '<div class="mix '+t+' '+arr[0].topic[i].id+' '+arr[0].topic[i].childsContent[key].bundle[bund]+' '+key+'" data-myorder="'+pw+'" data-myorder1="'+j+'" > <figure class="imghvr-slide-right" class="here" id="col'+j+'"> <div id="title"><span id="ti0'+j+'"></span></div> <div id="subs"><span id="su0'+j+'"></span></div> <figcaption> <div id="title0"><span id="ti1'+j+'"></span></div> <div id="st"><span id="su1'+j+'"></span></div> <span><h6 class="cl" id="'+key+'"></h6></span> <ul id="tr"> <li id="sd'+j+'"> </li> <li id="ep'+j+'"></li> <li id="tba'+j+'"></li> </ul> </figcaption> <div id="cr2"> <div id="im0'+j+j+'"></div><br> </div><div id="cr"> <div id="im0'+j+'"></div></div></figure> <span id="letout" data-id="'+key+'"><h3><div id="letou'+j+j+'"></div></h3> </span>  <span id="letit1"><h3><div id="leti'+j+j+'"></div></h3> </span> <span id="letit2"><h4><div id="leti'+j+'"></div></h4></span><div id="w"> <span id="w2"> <div id="i0'+j+j+'"> </div></span> <span id="w1"> <div id="i0'+j+'"></div></span> </div> </div>'; // HTML string
 }
 }else{
-var s = '<div class="mix '+t+' '+arr[0].topic[i].id+' '+key+'" data-myorder="'+fu+'" data-myorder1="'+j+'" > <figure class="imghvr-slide-right" class="here" id="col'+j+'"> <div id="title"><span id="ti0'+j+'"></span></div> <div id="subs"><span id="su0'+j+'"></span></div> <figcaption> <div id="title0"><span id="ti1'+j+'"></span></div> <div id="st"><span id="su1'+j+'"></span></div> <span><h6 class="cl" id="'+key+'"></h6><span> <ul id="tr"> <li id="sd'+j+'"> </li> <li id="ep'+j+'"></li> <li id="tba'+j+'"></li> </ul> </figcaption> <div id="cr2"> <div id="im0'+j+j+'"></div><br> </div> <div id="cr"> <div id="im0'+j+'"></div></div> </figure><span id="letout" data-id="'+key+'"><h3><div id="letou'+j+j+'"></div></h3> </span> <span id="letit1"><h3><div id="leti'+j+j+'"></div></h3></span> <span id="letit2"><h4><div id="leti'+j+'"></div></h4></span> <div id="w"> <span id="w2"> <div id="i0'+j+j+'"> </div></span> <span id="w1"> <div id="i0'+j+'"></div></span> </div> </div>'; // HTML string
+var s = '<div class="mix '+t+' '+arr[0].topic[i].id+' '+key+'" data-myorder="'+pw+'" data-myorder1="'+j+'" > <figure class="imghvr-slide-right" class="here" id="col'+j+'"> <div id="title"><span id="ti0'+j+'"></span></div> <div id="subs"><span id="su0'+j+'"></span></div> <figcaption> <div id="title0"><span id="ti1'+j+'"></span></div> <div id="st"><span id="su1'+j+'"></span></div> <span><h6 class="cl" id="'+key+'"></h6><span> <ul id="tr"> <li id="sd'+j+'"> </li> <li id="ep'+j+'"></li> <li id="tba'+j+'"></li> </ul> </figcaption> <div id="cr2"> <div id="im0'+j+j+'"></div><br> </div> <div id="cr"> <div id="im0'+j+'"></div></div> </figure><span id="letout" data-id="'+key+'"><h3><div id="letou'+j+j+'"></div></h3> </span> <span id="letit1"><h3><div id="leti'+j+j+'"></div></h3></span> <span id="letit2"><h4><div id="leti'+j+'"></div></h4></span> <div id="w"> <span id="w2"> <div id="i0'+j+j+'"> </div></span> <span id="w1"> <div id="i0'+j+'"></div></span> </div> </div>'; // HTML string
 
 
 }
@@ -554,6 +585,15 @@ $(x).removeClass("here").addClass("sc");
  var ep = "ep"+j;
  var tba = "tba"+j;
  
+ if( arr[0].topic[i].childsContent[key].bannerImg != null){
+ 
+ 	var im2="#im0"+fi;
+ 	$(im2).css({"background-image": "url("+arr[0].topic[i].childsContent[key].bannerImg+")","background-size": "cover","background-position": "center center","height":"100px","width":"315px"});
+var e8="#i0"+fi;
+		$(e8).css({"background-image": "url("+arr[0].topic[i].childsContent[key].bannerImg+")","background-size": "cover","background-position": "center center","height":"199px","width":"364px"});
+
+ }
+ /*
  Object.keys(arr[0].topic[i].childsContent[key].images).forEach(function (key2) { 
  if(key2==0){
 
@@ -561,19 +601,19 @@ $(x).removeClass("here").addClass("sc");
 	 var im="#im0"+fi+fi;
 	 	//document.getElementById(e).innerHTML = '<img src="' + arr[0].topic[i].childsContent[key].images[key2]["image-url"] + '"/>';
 
-		 		$(e).css({"background-image": "url("+arr[0].topic[i].childsContent[key].images[key2]["image-url"] +")","background-size": "cover","background-position": "center center","height":"202px","width":"181px"});
+		 	//	$(e).css({"background-image": "url("+arr[0].topic[i].childsContent[key].images[key2]["image-url"] +")","background-size": "cover","background-position": "center center","height":"202px","width":"181px"});
 
- 		$(im).css({"background-image": "url("+arr[0].topic[i].childsContent[key].images[key2]["image-url"]+")","background-size": "cover","background-position": "center center","height":"100px","width":"115px"});
+ 	//	$(im).css({"background-image": "url("+arr[0].topic[i].childsContent[key].images[key2]["image-url"]+")","background-size": "cover","background-position": "center center","height":"100px","width":"115px"});
 
 
 	}
 	if(key2==1){
 
 var e8="#i0"+fi;
-	var im2="#im0"+fi;
-	$(im2).css({"background-image": "url("+arr[0].topic[i].childsContent[key].images[key2]["image-url"]+")","background-size": "cover","background-position": "center center","height":"100px","width":"115px"});
+	//var im2="#im0"+fi;
+//	$(im2).css({"background-image": "url("+arr[0].topic[i].childsContent[key].images[key2]["image-url"]+")","background-size": "cover","background-position": "center center","height":"100px","width":"115px"});
 	
-		$(e8).css({"background-image": "url("+arr[0].topic[i].childsContent[key].images[key2]["image-url"]+")","background-size": "cover","background-position": "center center","height":"202px","width":"181px"});
+		//$(e8).css({"background-image": "url("+arr[0].topic[i].childsContent[key].images[key2]["image-url"]+")","background-size": "cover","background-position": "center center","height":"202px","width":"181px"});
 
  	
 
@@ -584,8 +624,10 @@ var e8="#i0"+fi;
 
 	 
 	 });
-	 
- $("#w img").hide();
+	 */
+
+
+	 $("#w img").hide();
  $("#letit1 h3").hide();
 		  $("#letit2 h4").hide();
 		  $("#letout h3").hide();
@@ -628,15 +670,6 @@ var e8="#i0"+fi;
  }
 
  
- 
- 
-
-
-
-
-
-
-
 
   
 

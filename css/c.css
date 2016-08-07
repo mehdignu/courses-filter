@@ -3,7 +3,12 @@
     box-sizing: border-box;
     font-family: Lato;
 }
-a {
+.cl a {
+    float: right;
+    padding-right: 20px;
+    padding-top: 50px;
+}
+#letout a {
     float: right;
     padding-right: 20px;
     padding-top: 50px;
@@ -27,11 +32,12 @@ a {
     position: relative;
     width: 300px;
 }
-#desc, h3 {
-    color: white;
-    font-size: 55%;
-    margin-left: 10px;
-    position: relative;
+.modal-header h3 {
+    text-align: center;
+}
+.modal-header #hr2 {
+    font-size: 16px;
+    text-align: center;
 }
 header, section, footer, aside, nav, article, hgroup {
     display: block;
@@ -39,11 +45,14 @@ header, section, footer, aside, nav, article, hgroup {
 body, button {
     font-family: "Helvetica Neue",arial,sans-serif;
 }
+#rn {
+    color: #a86f06;
+}
 .controls {
     float: left;
     margin-left: -8px;
     margin-right: 42px;
-    padding: 0 13% 10% 5%;
+    padding: 0 1% 0;
 }
 #filter-list {
     display: block;
@@ -127,8 +136,9 @@ ul {
     margin-top: 44px;
     position: absolute;
 }
-#cr2 img {
+#cr {
     height: 153px;
+    left: -116px;
     width: 231px;
 }
 #cr img {
@@ -296,14 +306,14 @@ button + label {
     display: block;
     float: right;
     height: 250px;
-    margin-left: 0;
+    margin-left: 1px;
     width: 300px;
 }
 #fu1 img {
     display: block;
     float: right;
     height: 250px;
-    margin-left: 0;
+    margin-left: 1px;
     margin-right: -300px;
     margin-top: 250px;
     width: 300px;
