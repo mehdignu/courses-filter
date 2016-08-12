@@ -2,12 +2,14 @@
 <html lang="en-US">
 <head>
   <meta charset="utf-8">
+  <meta name="author" content="Mehdi Dridi">
   <meta http-equiv="Content-Type" content="text/html">
     <link rel="stylesheet" href="css/c.css">
 	<link rel="stylesheet" href="css/select.css">
 	<link rel="stylesheet" href="css/r.css">
+	
+	
 <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
 <link rel="stylesheet" href="http://domain.tld/mobile.css" type="text/css" media="handheld" />
 <link rel="stylesheet" href="http://domain.tld/screen.css" type="text/css" media="Screen" />
 <link rel="stylesheet" href="http://domain.tld/mobile.css" type="text/css" media="handheld" />
@@ -225,7 +227,7 @@ var node = document.createElement("p");
 		document.getElementById("fo").appendChild(node);
 			var node = document.createElement("LI");
 
-		textnode = document.createTextNode("Prize : "+arr[0].topic[pos].childsContent[x].prize);
+		textnode = document.createTextNode("Price : "+arr[0].topic[pos].childsContent[x].price);
 		node.appendChild(textnode);
 		document.getElementById("fo").appendChild(node);
 			var node = document.createElement("LI");
@@ -366,7 +368,7 @@ var node = document.createElement("p");
 		document.getElementById("fo").appendChild(node);
 			var node = document.createElement("LI");
 
-		textnode = document.createTextNode("Price : "+arr[0].topic[pos].childsContent[x].prize);
+		textnode = document.createTextNode("Price : "+arr[0].topic[pos].childsContent[x].price);
 		node.appendChild(textnode);
 		document.getElementById("fo").appendChild(node);
 			var node = document.createElement("LI");
@@ -633,7 +635,7 @@ var e8="#i0"+fi;
 		  $("#letout h3").hide();
 
  document.getElementById(sd).innerHTML = "ETCS: "+ arr[0].topic[i].childsContent[key].etcs;
-	document.getElementById(ep).innerHTML = "Price: "+ arr[0].topic[i].childsContent[key].prize;
+	document.getElementById(ep).innerHTML = "Price: "+ arr[0].topic[i].childsContent[key].price;
 	document.getElementById(tba).innerHTML = "Duration: "+ arr[0].topic[i].childsContent[key].duration;
  	document.getElementById(l).innerHTML ='<a href="#">' + "&#xbb;read more" + '</a>';
 	 	document.getElementById(le).innerHTML ='<a href="#">' + "&#xbb;read more" + '</a>';

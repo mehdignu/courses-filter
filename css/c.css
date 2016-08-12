@@ -46,8 +46,14 @@ body, button {
     font-family: "Helvetica Neue",arial,sans-serif;
 }
 #rn {
-    color: #a86f06;
+    color: white;
+	font-size:15px;
+	padding-right: 62px;
 }
+#rn:hover{
+	
+ color: #a86f06;
+}	
 .controls {
     float: left;
     margin-left: -8px;
@@ -385,7 +391,7 @@ button + label {
     color: white;
     display: block;
     margin-left: 19px;
-    margin-top: 60px;
+    margin-top: 72px;
     position: absolute;
     width: 507px;
 }
