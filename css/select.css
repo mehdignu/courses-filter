@@ -99,51 +99,33 @@ span.selectOption1 {
     padding: 5px 8px;
     width: 105%;
 }
-span#ind1 {
-    color: #f59300;
-    float: right;
-    font: 18px Tahoma;
-    padding-right: 10px;
-    position: relative;
+span#ind1:hover {
+    background-color: #F59300;
+	color: white;
 }
-span#ind2 {
-    color: #c4472d;
-    float: right;
-    font: 18px Tahoma;
-    padding-right: 10px;
-    position: relative;
+span#ind2:hover {
+    background-color: #C4472D;
+	color: white;
 }
-span#ind3 {
-    color: #5e65ad;
-    float: right;
-    font: 18px Tahoma;
-    padding-right: 10px;
-    position: relative;
+span#ind3:hover {
+    background-color: #5E65AD;
+	color: white;
 }
-span#ind4 {
-    color: #439eb5;
-    float: right;
-    font: 18px Tahoma;
-    padding-right: 10px;
-    position: relative;
+span#ind4:hover {
+    background-color: #439EB5;
+	color: white;
 }
-span#ind5 {
-    color: #8db135;
-    float: right;
-    font: 18px Tahoma;
-    padding-right: 10px;
-    position: relative;
+span#ind5:hover {
+    background-color: #8DB135;
+	color: white;
 }
-span#ind6 {
-    color: #988e20;
-    float: right;
-    font: 18px Tahoma;
-    padding-right: 10px;
-    position: relative;
+span#ind6:hover {
+    background-color: #988E20;
+	color: white;
 }
-span#sc:hover {
-    background: #f59300 none repeat scroll 0 0;
-    color: #f6f6f6;
+span#ind7:hover {
+    background-color: #F59300;
+	color: white;
 }
 span#ee:hover {
     background: #c4472d none repeat scroll 0 0;

@@ -79,7 +79,7 @@ $(".selected1").text("Choose Module Bundle");
 					//hiding after click
 					$(".selectOptions1").hide();
 					
-$(".selected").text("Select a Catagory");
+$(".selected").text("Select a Category");
 
 					//change text
 					$("span.selected1").text($c);

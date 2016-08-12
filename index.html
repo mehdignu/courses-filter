@@ -40,7 +40,7 @@
 			<span class='selected'></span>
 			<span class='selectArrow'>&#9660</span>
 			<div class="selectOptions" id="SO">
-				<span id="all" class="selectOption" value="all">Select a Catagory</span>	
+				<span id="all" class="selectOption" value="all">Select a Category</span>	
 				
 			</div>
 		</div>
@@ -65,9 +65,8 @@
 			<label>Change Layout:</label>
 			<button id="ChangeLayout" class="btn btn-default">Grid</button>
 			<button id="ChangeLayout1" class="btn btn-default">List</button>
-			<label>Topics change view as:</label>
-    <button id="b1" class="btn btn-primary" value="myorder:asc">Wall</button>
-    <button id="b2" class="btn btn-primary" value="myorder1:asc">Flower</button>
+			<label>Sort Courses:</label>
+    <button id="b1" class="btn btn-primary" value="myorder:asc">By Category</button>
 	
   </div>
 			 </div>
@@ -125,28 +124,28 @@ $(function(){
   var $filterSelect = $('#FilterSelect'),
       $sortSelect = $('#SortSelect'),
       $container = $('#Container'),
-	  $b1 = $('#b1'),
-	  $b2 = $('#b2');
-  
+	  $b1 = $('#b1');  
   $container.mixItUp();
-  var eh=0;
-  var heh=0;
+  var heh=3;
    $b1.on('click', function(){
-   if(eh != 1){
-    $container.mixItUp('sort', this.value);
-	eh=eh+1;
-	heh=0;
+   
+   if(heh%2 != 0){
+   $("#b1").text("by default");
+
+    $container.mixItUp('sort', 'myorder:asc');
 	}
+	
+	 if(heh%2 ==0){
+
+   $("#b1").text("By Category");
+
+    $container.mixItUp('sort', 'myorder1:asc');
+	}
+		heh=heh+1;
+
+	
    });
   
-  $b2.on('click', function(){
-     if(heh != 1){
-
-    $container.mixItUp('sort', this.value);
-	heh=heh+1;
-	eh=0;
-	}
-   });
 });
 
 
@@ -435,8 +434,26 @@ window.onclick = function(event) {
 
 //for the filter select
 var i=0;
+ var rbk;
  for(i=0;i<arr[0].topic.length; i++) { 
-var s='<span id="all" class="selectOption" value=".'+arr[0].topic[i].id+'" style="display:visible !important" type="'+arr[0].topic[i].topicTitle+'"><div id="s'+i+'">'+arr[0].topic[i].topicTitle+'</div></span>';
+ 
+  if(arr[0].topic[i].topicColor=="F59300"){
+  rbk="ind1";
+  }
+  if(arr[0].topic[i].topicColor=="C4472D"){
+    rbk="ind2";
+}
+  if(arr[0].topic[i].topicColor=="5E65AD"){
+  rbk="ind3";}
+  if(arr[0].topic[i].topicColor=="439EB5"){
+  rbk="ind4";}
+  if(arr[0].topic[i].topicColor=="8DB135"){
+  rbk="ind5";}
+  if(arr[0].topic[i].topicColor=="988E20"){
+  rbk="ind6";}
+ 
+ 
+var s='<span id="'+rbk+'" class="selectOption" value=".'+arr[0].topic[i].id+'" style="display:visible !important" type="'+arr[0].topic[i].topicTitle+'"><div id="s'+i+'">'+arr[0].topic[i].topicTitle+'</div></span>';
 				var div = document.createElement('div');
 				div.setAttribute("style", "display:visible !important;");
 
