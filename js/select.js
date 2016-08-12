@@ -77,6 +77,12 @@ alert($fu);
 						
 					
 					
+					if($(this).closest('span.selectOption').attr('value')=="all"){
+						$(".selected").css('background', "#f6f6f6 none repeat scroll 0 0");	
+					$(".selected").css('color', "#888");
+					}
+					
+					
 					$c=$(this).closest('span.selectOption').attr('type');
 					
 						//hiding after click
