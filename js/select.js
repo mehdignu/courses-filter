@@ -49,11 +49,39 @@ alert($fu);
 					$b=$(this).closest('div.selectBox').attr('value');
 					$container.mixItUp('filter',$b);
 					
+					$ind = $(this).closest('span.selectOption').attr('id');
+					if($ind=="ind1"){
+						$(".selected").css('background', "#F59300 none repeat scroll 0 0");					  
+						$(".selected").css('color', "white");					  
+						}
+						if($ind=="ind2"){
+						$(".selected").css('background', "#C4472D none repeat scroll 0 0");					  
+						$(".selected").css('color', "white");					  
+						}
+						if($ind=="ind3"){
+						$(".selected").css('background', "#5E65AD none repeat scroll 0 0");					  
+						$(".selected").css('color', "white");					  
+						}
+						if($ind=="ind4"){
+						$(".selected").css('background', "#439EB5 none repeat scroll 0 0");					  
+						$(".selected").css('color', "white");					  
+						}
+						if($ind=="ind5"){
+						$(".selected").css('background', "#8DB135 none repeat scroll 0 0");					  
+						$(".selected").css('color', "white");					  
+						}
+						if($ind=="ind6"){
+						$(".selected").css('background', "#988E20 none repeat scroll 0 0");					  
+						$(".selected").css('color', "white");					  
+						}
+						
+					
 					
 					$c=$(this).closest('span.selectOption').attr('type');
 					
 						//hiding after click
 					$(".selectOptions").hide();
+					
 $(".selected1").text("Choose Module Bundle");
 
 					
@@ -79,6 +107,10 @@ $(".selected1").text("Choose Module Bundle");
 					//hiding after click
 					$(".selectOptions1").hide();
 					
+					$(".selected").css('background', "#f6f6f6 none repeat scroll 0 0");	
+					$(".selected").css('color', "#888");	
+					
+
 $(".selected").text("Select a Category");
 
 					//change text
