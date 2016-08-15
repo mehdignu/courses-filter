@@ -300,14 +300,12 @@ $(document).on('click', '#letout', function () {
  var x=$(this).attr("data-id");
  
  
- //new crap
     var tip = $(this).offset().top;
 		 tip = tip-200;
 	$(".modal").css("padding-top", +tip+"px");
 
  
  
- //end new crap
 	 var pos;
 	 for(i=0;i<arr[0].topic.length;i++){
 	 		 Object.keys(arr[0].topic[i].childsContent).forEach(function (key2) {
