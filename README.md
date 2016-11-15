@@ -1,4 +1,5 @@
 Courses sorting Project for free university of berlin  
+#Features
 - responsive view.
 - grid view default / list view on choice
 - thematically sorted in columns, different colours for desktop max width view.
