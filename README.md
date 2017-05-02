@@ -1,5 +1,5 @@
 #courses-filter
-Courses sorting Project for free university of berlin  
+Courses sorting Project
 #Features
 - responsive view.
 - grid view default / list view on choice
