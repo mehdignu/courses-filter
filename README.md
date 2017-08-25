@@ -1,6 +1,5 @@
-#courses-filter
 Courses sorting Project
-#Features
+
 - responsive view.
 - grid view default / list view on choice
 - thematically sorted in columns, different colours for desktop max width view.
@@ -8,6 +7,6 @@ Courses sorting Project
 - each theme in a separete column with different color
 - boxes are showing basic information about a module
 - on mouse over more information are given and a read more button within the size of the nox itself 
-- the read more button will guide the user to a new page on our homepage. this link will be
+- the read more button will guide the user to a new page on homepage.
 - on click or hover over the read more button enlarges the more information box to the full size displaying all information
 - 4 boxes size on large screens
